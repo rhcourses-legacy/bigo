@@ -63,6 +63,41 @@
         \end{itemize}
     \end{block}
 \end{frame}
+
+\begin{frame}
+    \begin{block}{Beobachtungen}
+        \begin{itemize}
+            \item Komplexitätsklassen geben nur die Größenordnung an.
+            \item Konstante Faktoren und nicht-dominante Terme werden vernachlässigt.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Beispiele}
+        \vspace{-3ex}
+        \begin{align*}
+            \olin &= \bigo{2n} = \bigo{\frac{n}{2}} \\
+            \osquare &= \bigo{n^2+n+1} = \bigo{\left(\frac{n}{2}\right)^2} \\
+            \onlog &= \bigo{2n \log n  + 50n}
+        \end{align*}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Intuition:}
+        \begin{itemize}
+            \item Der Unterschied zwischen \olin und \bigo{2n} kann durch schnellere Hardware ausgeglichen werden.
+            \item Ebenso der Unterschied zwischen \osquare und \bigo{2(n^2)}.
+            \item Der Unterschied zwischen \olin und \osquare kann nicht so einfach kompensiert werden.
+            \item Das Verhalten von Polynomen (Funktionen) wird i.W. vom \emph{Leitterm} bestimmt.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Ziel bei der Entwicklung:}
+        \begin{itemize}
+            \item Komplexitätsklasse möglichst klein halten.
+            \item \alert{Komplexität kann nicht durch Hardware ausgeglichen werden!}
+            \item Konstante oder lineare Faktoren sind weniger von Bedeutung.
+        \end{itemize}
+    \end{block}
+\end{frame}
     
 \begin{frame}
     \begin{defblock}{$O$-Notation}

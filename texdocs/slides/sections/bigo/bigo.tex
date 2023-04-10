@@ -1,0 +1,71 @@
+\begin{frame}
+    \begin{block}{Bisher: Informelle Komplexitätsabschätzungen}
+        \begin{itemize}
+            \item Laufzeitabschätzungen in Abhängigkeit der Größe einer Datenstruktur
+            \begin{itemize}
+                \item z.B. Länge einer Liste oder Anzahl der Elemente eines Baumes
+            \end{itemize}
+            \item<2-> Beobachtung: Laufzeit wird i.d.R. \emph{ungenau} angegeben.
+            \begin{itemize}
+                \item z.B. Schleifendurchläufe zählen, aber nicht die Anzahl der Operationen innerhalb der Schleife
+                \item z.B. geschachtelte Schleifen berücksichtigen, hintereinander ausgeführte Schleifen aber nicht
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}<3->{Ziel: Formalisierung dieser Ungenauigkeiten}
+        \begin{itemize}
+            \item Wie kommen diese Abschätzungen zustande?
+            \item Welche Operationen müssen gezählt werden?
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{exblock}{Maximum einer Liste bestimmen}
+        \inputsrcfile[slidelisting, xleftmargin=-3em, basicstyle=\ttfamily\scriptsize]{sections/bigo/code/ListSearch.java}[9-15]
+    \end{exblock}
+    \begin{block}<2->{Komplexität}
+        \begin{itemize}
+            \item $n$ Schleifendurchläufe (Aufrufe von \code{Math.max})
+            \item Komplexitätsklasse: \olin
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{exblock}{Differenz zw. Minimum und Maximum bestimmen}
+        \inputsrcfile[slidelisting, xleftmargin=-3em, basicstyle=\ttfamily\scriptsize]{sections/bigo/code/ListSearch.java}[20-30]
+    \end{exblock}
+    \begin{block}<2->{Komplexität}
+        \begin{itemize}
+            \item $2n$ Aufrufe von \code{Math.max} oder \code{Math.min}
+            \item Komplexitätsklasse: \olin
+            \begin{itemize}
+                \item \alert{Warum nicht \bigo{2n}?}
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{exblock}{Minimale Differenz von Elementen bestimmen}
+        \inputsrcfile[slidelisting, xleftmargin=-3em, basicstyle=\ttfamily\scriptsize]{sections/bigo/code/ListSearch.java}[35-43]
+    \end{exblock}
+    \begin{block}<2->{Komplexität}
+        \begin{itemize}
+            \item $n$ Durchläufe der äußeren Schleife
+            \item pro Durchlauf: $\leq n$ Durchläufe der inneren Schleife
+            \begin{itemize}
+                \item \alert{Warum $\leq n$ und nicht genauer?}
+            \end{itemize}
+            \item Komplexitätsklasse: \osquare
+        \end{itemize}
+    \end{block}
+\end{frame}
+    
+\begin{frame}
+    \begin{defblock}{$O$-Notation}
+        \todo[inline]{Definition hinzufügen.}
+    \end{defblock}
+\end{frame}

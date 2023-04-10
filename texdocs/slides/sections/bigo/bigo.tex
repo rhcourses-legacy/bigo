@@ -100,7 +100,39 @@
 \end{frame}
     
 \begin{frame}
-    \begin{defblock}{$O$-Notation}
-        \todo[inline]{Definition hinzufügen.}
+    \begin{defblock}{$O$-Komplexität}
+        Gegeben eine Funktion $f(n)$, ist $f(n) = O(g(n))$ genau dann, wenn es eine positive Konstante $c$ gibt, so dass für alle $n \geq n_0$ gilt:
+        \begin{align*}
+            f(n) \leq c \cdot g(n)
+        \end{align*}
     \end{defblock}
+    \begin{block}<2->{Intuitiv:}
+        \begin{itemize}
+            \item Falls $f(n) \geq g(n)$ für alle $n$ gilt, dann unterscheiden sich
+                  die Funktionen nur durch einen konstanten Faktor.
+            \item Für große $n$ ist $g(n)$ eine gute Abschätzung für $f(n)$.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{defblock}{$O$-Komplexität}
+        \vspace{-3ex}
+        \begin{align*}
+            f \in \bigo{g} &\Leftrightarrow \exists_{c>0} \exists_{n_0} \forall_{n \geq n_0}: f(n) \leq c \cdot g(n)
+        \end{align*}
+    \end{defblock}
+    \begin{block}{Intuitiv:}
+        \begin{itemize}
+            \item Die Funktion $f(n)$ wächst nicht schneller als $g(n)$.
+            \item Für \alert{fast alle $n$} gilt $f(n) \leq c \cdot g(n)$.
+        \end{itemize}
+    \end{block}
+    \begin{block}<2->{Konstante Faktoren sind nicht relevant:}
+        \begin{itemize}
+            \item Bewegen sich im Bereich der Ungenauigkeit, die durch unterschiedliche Hardware entsteht.
+            \item Bieten geringes Optimierungspotenzial.
+            \item Können ggf. durch Hardware ausgeglichen werden.
+        \end{itemize}
+    \end{block}
 \end{frame}
